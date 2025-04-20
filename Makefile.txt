@@ -1,0 +1,15 @@
+CC = gcc
+CFLAGS = -Wall -g
+TARGET = syswatch
+SRC = main.c stats_function.c
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SRC)
+
+install:
+	sudo cp $(TARGET) /usr/local/bin
+
+clean:
+	rm -f $(TARGET)
